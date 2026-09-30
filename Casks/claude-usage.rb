@@ -12,13 +12,11 @@ cask "claude-usage" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "ClaudeUsage.app"
 
-  zap trash: [
-    "~/Library/Preferences/com.chris.claude-usage.plist",
-  ]
+  zap trash: "~/Library/Preferences/com.chris.claude-usage.plist"
 
   caveats do
     <<~EOS
